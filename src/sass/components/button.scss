@@ -1,2 +1,10 @@
 @use "../tools/mixins" as *;
 @use "../variables/colors" as *;
+
+button {
+    @include button;
+    background-color: $color-accent;
+    color: $color-black;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}

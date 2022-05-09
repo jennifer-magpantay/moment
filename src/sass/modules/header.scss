@@ -1,0 +1,16 @@
+@use "../variables/colors" as *;
+@use "../variables/miscelaneous" as *;
+@use "../tools/mixins" as *;
+
+header {
+    height: 9rem;
+    display: flex;
+    align-items: center;
+    padding: 0 6%;
+    border-bottom: 02px solid $color-white;
+
+    img {
+        width: 12%;
+        min-width: 10rem;
+    }
+}

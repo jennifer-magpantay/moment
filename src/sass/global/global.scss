@@ -4,8 +4,11 @@
 
 /* 
 font-family: 'Montserrat', sans-serif;
-font-family: 'Merriweather Sans', sans-serif;
 font-family: 'Roboto', sans-serif;
+*/
+
+/* 
+https://webgradients.com/
 */
 
 html {
@@ -16,60 +19,46 @@ html {
 
 body {
   min-height: 100vh;
-  background-color: $color-background;
-  color: $color-text;
+  background-color: $color-gray-50;
+  color: $color-black;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: $size-text-regular;
   font-weight: 400;
   overflow-x: hidden;
 }
 
-// Links
-a {
-  color: inherit;
-  font-size: inherit;
-  font-weight: bold;
-  @include transitions;
+// Fonts
 
-  &:hover {
-    color: $color-secondary;
-    cursor: pointer;
-  }
-
-  &:active {
-    color: $color-secondary;
-    font-weight: bold;
-  }
-
-  &:visited {
-    color: $color-primary;
-  }
+h1,
+h2,
+h3 {
+  width: 100%;
+  display: block;
+  text-align: center;
 }
 
-// Fonts
 h1 {
-  width: 25ch;
-  margin: 02rem 0 01rem 0;
-  color: $color-title;
+  padding-bottom: 02rem;
+  border-bottom: 01px solid $color-gray-200;
+  color: $color-gray-800;
   font-size: $size-title;
   font-family: "Montserrat", sans-serif;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 1;
   text-transform: capitalize;
 }
 
 h2 {
-  margin-bottom: 03rem;
-  // color: $color-text;
+  margin: 02rem 0;
   font-size: $size-subtitle;
-  font-family: "Merriweather Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
 }
 
 h3 {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: $size-text-medium;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 p {

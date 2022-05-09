@@ -1,3 +1,9 @@
 @use "../variables/colors" as *;
 @use "../variables/miscelaneous" as *;
 @use "../tools/mixins" as *;
+
+main {
+    @include display-flex-center;
+    height: calc(100vh - 9rem);
+    padding: 02rem 6%;
+}

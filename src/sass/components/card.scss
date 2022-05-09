@@ -1,0 +1,14 @@
+@use "../variables/colors" as *;
+@use "../variables/miscelaneous" as *;
+@use "../tools/mixins" as *;
+
+.card {
+    @include display-flex-center;
+    flex-direction: column;
+    width: 50%;
+    min-width: 30rem;
+    padding: 02rem 04rem;
+    background-color: $color-gray-50;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+}
