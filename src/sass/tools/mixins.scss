@@ -1,0 +1,53 @@
+@use "../variables/miscelaneous.scss" as *;
+@use "../tools/responsive" as *;
+
+// buttons
+@mixin buttons {
+  @include display-flex;
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 5rem;
+  box-shadow: $box-shadow;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  // &:hover,
+  // &:focus,
+  // &:active {
+  //   border-color: inherit;
+  // }
+}
+
+// containers display
+@mixin display-flex {
+  display: flex;
+  align-items: center;
+}
+
+@mixin display-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin display-flex-spaceBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// transitions
+@mixin transitions {
+  transition: all 0.5s ease-in-out;
+}
+
+// functions
+@mixin light-houver-effect($color) {
+  background-color: lighten($color, 25);
+}

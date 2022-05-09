@@ -1,0 +1,112 @@
+@use "../variables/fonts" as *;
+@use "../variables/colors" as *;
+@use "../tools/mixins" as *;
+
+/* 
+font-family: 'Montserrat', sans-serif;
+font-family: 'Merriweather Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+*/
+
+html {
+  font-size: 62.5%;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: $color-background;
+  color: $color-text;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: $size-text-regular;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+// Links
+a {
+  color: inherit;
+  font-size: inherit;
+  font-weight: bold;
+  @include transitions;
+
+  &:hover {
+    color: $color-secondary;
+    cursor: pointer;
+  }
+
+  &:active {
+    color: $color-secondary;
+    font-weight: bold;
+  }
+
+  &:visited {
+    color: $color-primary;
+  }
+}
+
+// Fonts
+h1 {
+  width: 25ch;
+  margin: 02rem 0 01rem 0;
+  color: $color-title;
+  font-size: $size-title;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: capitalize;
+}
+
+h2 {
+  margin-bottom: 03rem;
+  // color: $color-text;
+  font-size: $size-subtitle;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 700;
+}
+
+h3 {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: $size-text-medium;
+  font-weight: 500;
+}
+
+p {
+  max-width: 90ch;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// Global Classes
+.caption {
+  font-size: $size-text-small;
+}
+
+.container-flex {
+  @include display-flex;
+}
+
+.container-flex-center {
+  @include display-flex-center;
+}
+
+.container-flex-spaceBetween {
+  @include display-flex-spaceBetween;
+}
+
+// display content only for screen readers
+.sr-only {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
