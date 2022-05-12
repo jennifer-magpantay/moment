@@ -19,7 +19,7 @@ html {
 
 body {
   min-height: 100vh;
-  background-color: $color-gray-50;
+  background-color: $color-gray-200;
   color: $color-black;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: $size-text-regular;
@@ -45,7 +45,7 @@ h1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
   line-height: 1;
-  text-transform: capitalize;
+  // text-transform: capitalize;
 }
 
 h2 {
