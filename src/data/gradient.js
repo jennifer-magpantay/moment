@@ -1,6 +1,6 @@
 // background-image: linear-gradient(gradient);
 
-export const linerGradient = [
+export const linearGradient = [
   { gradient: "to right, #fa709a 0%, #fee140 100%" },
   { gradient: "to right, #43e97b 0%, #38f9d7 100%" },
   { gradient: "to top, #30cfd0 0%, #330867 100%" },

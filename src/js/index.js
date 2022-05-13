@@ -1,5 +1,8 @@
+import { linearGradient } from "../data/gradient.js";
+import { getApi } from "../services/getApi.js";
+import { getDate } from "../services/getDate.js";
+
 window.addEventListener("load", () => {
-  console.log("loading page");
   init();
 });
 
@@ -35,47 +38,42 @@ function generateQuote() {
 }
 
 async function handleGenerateQuote() {
-  console.log("call api and save it into html tags");
   // connect to API to generate the quote and display on card-content div
-  const cardContent = document.querySelector("#card-content");
-  const blockquote = document.createElement("blockquote");
-  const q = document.createElement("q");
-  const cite = document.createElement("cite");
+  const cardContent = document.querySelector("#content");
 
-  const results = await getQuotes();
+  const blockquote = createNodeElement("blockquote");
+  const qt = createNodeElement("quote");
+  const cite = createNodeElement("cite");
+
+  cardContent.innerHTML = "";
+
+  const results = await getApi();
   const data = results.map((item) => item);
-  getQuoteAtIndex(data, 3);
+  const index = generateRandomIndex(data.length);
+
+  const quote = getQuoteAtIndex(data, index);
+
+  qt.textContent = quote.text;
+  cite.textContent = quote.author;
+  console.log(qt, cite);
+
+  blockquote.appendChild(qt);
+  blockquote.appendChild(cite);
+  cardContent.appendChild(blockquote);
 }
 
 function getQuoteAtIndex(data, index) {
-  console.log(data[index]);
+  return data[index];
 }
 
-function getQuotes() {
-  const URL = "https://type.fit/api/quotes";
-  return returnFetchJson(URL);
-}
-
-// set a function that will deal with the errors and return the data JSON
-async function returnFetchJson(url) {
-  try {
-    const response = await fetch(url);
-    // if response is ok, then return response.json
-    if (response.ok) {
-      return response.json();
-    } else {
-      // throw a error
-      throw new Error(response.statusText);
-    }
-  } catch (error) {
-    throw error;
-  }
-}
-
-function createNode(element) {
+function createNodeElement(element) {
   return document.createElement(element);
 }
 
 function append(parent, el) {
   return parent.appendChild(el);
+}
+
+function generateRandomIndex(number) {
+  return Math.ceil(Math.random() * (number - 0)) + 0;
 }
