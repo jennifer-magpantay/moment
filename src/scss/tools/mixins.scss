@@ -2,28 +2,6 @@
 @use "../variables/miscelaneous" as *;
 @use "../tools/responsive" as *;
 
-// buttons
-@mixin button {
-  @include display-flex;
-  padding: 1rem 3rem;
-  border: none;
-  border-radius: 5rem;
-  box-shadow: $box-shadow;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: all 0.5s ease;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    background-color: lighten($color-accent, 15);
-  }
-}
-
 // containers display
 @mixin display-flex {
   display: flex;

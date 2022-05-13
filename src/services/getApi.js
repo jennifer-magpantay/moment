@@ -19,7 +19,6 @@ async function returnFetchJson(url) {
 }
 
 export const getApi = () => {
-  console.log("get api");
   const URL = "https://type.fit/api/quotes";
   return returnFetchJson(URL);
 };

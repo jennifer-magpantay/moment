@@ -15,7 +15,7 @@
 
 .material-icons {
     display: inline-block;
-    margin-right: 0.5rem;
+    margin-left: 0.5rem;
     color: inherit;
     font-family: "Material Icons";
     font-weight: normal;
@@ -63,13 +63,5 @@
 
     &.large {
         font-size: clamp(2.4rem, 3vw, 3.6rem);
-    }
-
-    &.close {
-        @include display-flex-center;
-        @include transitions;
-        margin-right: 0;
-        padding: 0.5rem;
-        border-radius: 50%;
     }
 }

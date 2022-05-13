@@ -1,10 +1,28 @@
 @use "../tools/mixins" as *;
 @use "../variables/colors" as *;
+@use "../variables/miscelaneous" as *;
 
 button {
-    @include button;
+    @include display-flex;
+    margin: 01rem 0;
+    padding: 1rem 3rem;
     background-color: $color-accent;
     color: $color-black;
+    border: none;
+    border-radius: 5rem;
+    box-shadow: $box-shadow;
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: lighten($color-accent, 15);
+    }
 }

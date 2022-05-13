@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@500;700&display=swap"
         rel="stylesheet" <!-- Google Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -26,19 +26,22 @@
 
 <body>
 
-    <header>
-        <img src="./assets/moment.svg"
-            alt="Moment logo designed in whitecolor, highlighting the letters 'm' and 'e' in cherry-tomato color">
-    </header>
-
     <main>
-        <div class="card">
-            <h1>moment</h1>
-            <h2 id="greeting"></h2>
-            <div class="card--content" id="content">
+        <div class="card" id="card">
+            <div class="card--image">
+                <img src="./assets/moment-logo-black.svg"
+                    alt="Moment logo designed in black bold letters, highlighting the letters 'm' and 'e' in cherry-tomato color">
+            </div>
+            <p class='card--greeting'><span id="greeting"></span>. Take a moment to clear your mind and take a deep
+                breathe</p>
+            <div class="card--content hidden" id="content">
                 <!-- content to be load by javascript -->
             </div>
-            <button type="button" id="button-quote-generator">GENERATE QUOTE</button>
+            <button type="button" id="button-quote-generator">
+                GENERATE QUOTE
+                <span class="material-icons regular">
+                    sync
+                </span></button>
         </div>
     </main>
 

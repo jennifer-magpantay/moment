@@ -4,6 +4,6 @@
 
 main {
     @include display-flex-center;
-    height: calc(100vh - 9rem);
-    padding: 02rem 6%;
+    width: 100%;
+    height: 100%;
 }
