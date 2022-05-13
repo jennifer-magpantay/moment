@@ -16,15 +16,11 @@ function init() {
 
 // changing background gradient when the page is loded
 function changeBackgroundOnLoading() {
-  console.log("changing background");
   const body = document.querySelector("body");
 
   const data = linearGradient.map((item) => item);
   const index = generateRandomIndex(data.length);
   const gradientBackground = getDataAtIndex(data, index);
-
-  console.log(gradientBackground);
-
   body.style.backgroundImage = `linear-gradient(${gradientBackground.gradient})`;
 }
 
@@ -52,7 +48,9 @@ function generateQuote() {
     "#button-quote-generator"
   );
 
-  buttonQuoteGenerator.addEventListener("click", handleGenerateQuote);
+  buttonQuoteGenerator.addEventListener("click", () => {
+    handleGenerateQuote(), handleContentExpanding();
+  });
 }
 
 async function handleGenerateQuote() {
@@ -72,11 +70,26 @@ async function handleGenerateQuote() {
   const quote = getDataAtIndex(data, index);
 
   qt.textContent = quote.text;
-  cite.textContent = quote.author;
+  cite.textContent = quote.author === "" ? "Unknown" : quote.author;
 
   blockquote.appendChild(qt);
   blockquote.appendChild(cite);
   cardContent.appendChild(blockquote);
+}
+
+// smoothly expand the content container
+function handleContentExpanding() {
+  const card = document.querySelector("#card");
+  const cardContent = document.querySelector("#content");
+
+  card.classList.add("expand");
+  cardContent.classList.remove("hidden");
+
+  const removeClasses = () => {
+    card.classList.remove("expand");
+  };
+
+  setTimeout(removeClasses, 15010);
 }
 
 function getDataAtIndex(data, index) {
