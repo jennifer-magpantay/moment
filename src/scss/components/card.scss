@@ -1,0 +1,39 @@
+@use "../variables/colors" as *;
+@use "../variables/miscelaneous" as *;
+@use "../tools/mixins" as *;
+
+.card {
+    @include display-flex-center;
+    width: 50%;
+    min-width: 30rem;
+    height: 60vh;
+    flex-direction: column;
+    padding: 02rem 04rem;
+    background-color: $color-gray-50;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+
+    &--content {
+        height: 80%;
+        
+        blockquote {
+            width: 100%;
+        }
+        quote::before,
+        quote::after {
+            content: '"';
+        }
+        cite::before {
+            content: "-";
+            margin-right: 0.5rem;
+            color: $color-gray-400;
+        }
+        cite {
+            width: 100%;
+            display: block;
+            margin: 01rem 0;
+            color: $color-gray-400;
+            text-align: end;
+        }
+    }
+}

@@ -15,7 +15,7 @@ Application that generates inpirational quotes to make any moment of your day a 
 
 ## Technologies
 
-- HTML5, CSS3, Sass, and JavaScript.
+- HTML5, CSS3, Sass, JavaScript, and Parcel.
 
 ## Goals
 
