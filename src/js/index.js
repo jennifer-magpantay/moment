@@ -1,6 +1,6 @@
 import { linearGradient } from "../data/gradient.js";
 import { getApi } from "../services/getApi.js";
-import { getDate } from "../services/getDate.js";
+import { getHour } from "../services/getHour.js";
 
 window.addEventListener("load", () => {
   init();
@@ -18,14 +18,32 @@ function init() {
 function changeBackgroundOnLoading() {
   console.log("changing background");
   const body = document.querySelector("body");
-  body.style.backgroundImage =
-    "linear-gradient(to right, #fa709a 0%, #fee140 100%)";
+
+  const data = linearGradient.map((item) => item);
+  const index = generateRandomIndex(data.length);
+  const gradientBackground = getDataAtIndex(data, index);
+
+  console.log(gradientBackground);
+
+  body.style.backgroundImage = `linear-gradient(${gradientBackground.gradient})`;
 }
 
 // greeting user according to the time of the day
 function greetings() {
   const greeting = document.querySelector("#greeting");
-  greeting.textContent = "Good morning or good night";
+  const currentHour = getHour();
+
+  let salution = "";
+  if (currentHour < 12) {
+    salution = "Good morning";
+  }
+  if (currentHour > 12 || currentHour < 18) {
+    salution = "Good afternoon";
+  } else {
+    salution = "Good Evening";
+  }
+
+  greeting.textContent = salution;
 }
 
 // connect to api to get a quote when button is clicked
@@ -51,27 +69,22 @@ async function handleGenerateQuote() {
   const data = results.map((item) => item);
   const index = generateRandomIndex(data.length);
 
-  const quote = getQuoteAtIndex(data, index);
+  const quote = getDataAtIndex(data, index);
 
   qt.textContent = quote.text;
   cite.textContent = quote.author;
-  console.log(qt, cite);
 
   blockquote.appendChild(qt);
   blockquote.appendChild(cite);
   cardContent.appendChild(blockquote);
 }
 
-function getQuoteAtIndex(data, index) {
+function getDataAtIndex(data, index) {
   return data[index];
 }
 
 function createNodeElement(element) {
   return document.createElement(element);
-}
-
-function append(parent, el) {
-  return parent.appendChild(el);
 }
 
 function generateRandomIndex(number) {

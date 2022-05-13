@@ -1,16 +1,15 @@
 @use "../variables/fonts" as *;
 @use "../variables/colors" as *;
 @use "../tools/mixins" as *;
+@use "../tools/animations" as *;
 
 /* 
 font-family: 'Montserrat', sans-serif;
 font-family: 'Roboto', sans-serif;
 */
-
 /* 
 https://webgradients.com/
 */
-
 html {
   font-size: 62.5%;
   overflow: auto;
@@ -18,13 +17,19 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  @include display-flex-center;
+  @include gradient-animation(gradient-background);
+
+  height: 100vh;
   background-color: $color-gray-200;
+  background-repeat: no-repeat;
+  background-size: 300% 300%;
   color: $color-black;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: $size-text-regular;
   font-weight: 400;
   overflow-x: hidden;
+  animation: gradient-background 8s ease infinite;
 }
 
 // Fonts
@@ -49,7 +54,7 @@ h1 {
 }
 
 h2 {
-  margin: 02rem 0;
+  margin: 02rem 0 0;
   font-size: $size-subtitle;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -62,7 +67,7 @@ h3 {
 }
 
 p {
-  max-width: 70ch;
+  max-width: 50ch;
 }
 
 ul {
