@@ -5,6 +5,7 @@ Take a moment to make your day a better day.
 Application that generates inpirational quotes to make any moment of your day a better one.
 
 ## Preview
+![moment](https://user-images.githubusercontent.com/56962997/168440790-ea43e1ab-3549-4222-90e7-3ded25addb43.gif)
 
 ## Features
 
