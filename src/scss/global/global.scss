@@ -3,13 +3,6 @@
 @use "../tools/mixins" as *;
 @use "../tools/animations" as *;
 
-/* 
-font-family: 'Montserrat', sans-serif;
-font-family: 'Roboto', sans-serif;
-*/
-/* 
-https://webgradients.com/
-*/
 html {
   font-size: 62.5%;
   overflow: auto;
@@ -32,75 +25,8 @@ body {
   animation: gradient-background 8s ease infinite;
 }
 
-// Fonts
-
-h1,
-h2,
-h3 {
-  width: 100%;
-  display: block;
-  text-align: center;
-}
-
-h1 {
-  padding-bottom: 02rem;
-  border-bottom: 01px solid $color-gray-200;
-  color: $color-gray-800;
-  font-size: $size-title;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-  line-height: 1;
-  // text-transform: capitalize;
-}
-
-h2 {
-  margin: 02rem 0 0;
-  font-size: $size-subtitle;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-}
-
-h3 {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
-  font-size: $size-text-medium;
-  font-weight: 700;
-}
 
 p {
   max-width: 50ch;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-// Global Classes
-.caption {
-  font-size: $size-text-small;
-}
-
-.container-flex {
-  @include display-flex;
-}
-
-.container-flex-center {
-  @include display-flex-center;
-}
-
-.container-flex-spaceBetween {
-  @include display-flex-spaceBetween;
-}
-
-// display content only for screen readers
-.sr-only {
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-}

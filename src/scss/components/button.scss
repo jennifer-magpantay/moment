@@ -25,4 +25,9 @@ button {
     &:focus {
         background-color: lighten($color-accent, 15);
     }
+
+    &:disabled {
+        background-color: $color-gray-200;
+        color: $color-gray-500;
+    }
 }
