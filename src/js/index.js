@@ -92,7 +92,7 @@ function handleContentExpanding() {
   // add/remove classes for style and disabled elements when button is clicked
   card.classList.add("expand");
   greeting.style.margin = "0 0 1rem 0";
-  // button.setAttribute("disabled", true);
+  button.setAttribute("disabled", true);
 
   // set a timeout to reset elements after 15s time
   const removeClasses = () => {
