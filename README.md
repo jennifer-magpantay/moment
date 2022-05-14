@@ -4,8 +4,6 @@ Take a moment to make your day a better day.
 
 Application that generates inpirational quotes to make any moment of your day a better one.
 
-## Prototype
-
 ## Preview
 
 ## Features
@@ -23,7 +21,7 @@ Create an application to apply the main concepts of clean code, project structur
 
 ## Status
 
-In development.
+Finished.
 
 ## Run locally
 
@@ -48,13 +46,8 @@ Install dependencies
 Start the server
 
 ```bash
-  npm start
+  npm run dev
 ```
-
-npm start - Copies src files to public and starts Browsersync server at localhost:3000
-npm run build - Copies files to public and autoprefixes/minifies css
-
-## TODO
 
 ## Author
 
